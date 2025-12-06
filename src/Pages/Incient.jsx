@@ -199,7 +199,7 @@ const IncidentManagement = () => {
     const fetchIncidents = async () => {
       try {
         const res = await axios.get(
-          `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/incidents?userId=${userId}`
+          `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/incidents?userId=${userId}`
         );
 
         console.log(res);
@@ -236,7 +236,7 @@ const IncidentManagement = () => {
       const payload = { targetValue, targetType };
 
       await axios.post(
-        "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/incidents/resolve-by-target",
+        "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/incidents/resolve-by-target",
         payload
       );
 
@@ -300,8 +300,8 @@ const IncidentManagement = () => {
                   setCurrentPage(1);
                 }}
                 className={`px-4 py-1 rounded-lg font-medium text-sm ${filter === tab
-                    ? "bg-pink-600"
-                    : "bg-blue-900 hover:bg-purple-800"
+                  ? "bg-pink-600"
+                  : "bg-blue-900 hover:bg-purple-800"
                   }`}
               >
                 {tab} (
@@ -468,8 +468,8 @@ const IncidentManagement = () => {
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage((p) => p - 1)}
                 className={`px-3 py-1 rounded-md ${currentPage === 1
-                    ? "bg-gray-700 cursor-not-allowed"
-                    : "bg-blue-900 hover:bg-blue-700"
+                  ? "bg-gray-700 cursor-not-allowed"
+                  : "bg-blue-900 hover:bg-blue-700"
                   }`}
               >
                 Previous
@@ -484,8 +484,8 @@ const IncidentManagement = () => {
                 disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage((p) => p + 1)}
                 className={`px-3 py-1 rounded-md ${currentPage === totalPages
-                    ? "bg-gray-700 cursor-not-allowed"
-                    : "bg-blue-900 hover:bg-blue-700"
+                  ? "bg-gray-700 cursor-not-allowed"
+                  : "bg-blue-900 hover:bg-blue-700"
                   }`}
               >
                 Next

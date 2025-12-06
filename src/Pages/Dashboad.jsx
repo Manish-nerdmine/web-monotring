@@ -32,7 +32,7 @@ const Dashboards = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/dashboard?userId=${webUserId}`
+          `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/dashboard?userId=${webUserId}`
         );
         setData(res.data);
       } catch (error) {

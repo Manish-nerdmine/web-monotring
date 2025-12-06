@@ -50,7 +50,7 @@ export default function SettingsPage() {
       try {
         setLoadingProfile(true);
         const res = await axios.get(
-          `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/${uId}`
+          `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/${uId}`
         );
         console.log("User Details:", res.data);
         setFullName(res.data?.fullName ?? "");
@@ -93,7 +93,7 @@ export default function SettingsPage() {
     try {
       setSavingProfile(true);
       await axios.put(
-        `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/${uId}`,
+        `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/${uId}`,
         payload
       );
       toast.success("Profile updated!");
@@ -129,7 +129,7 @@ export default function SettingsPage() {
       setUpdatingPassword(true);
 
       const res = await axios.put(
-        `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/me/change-password/${uId}`,
+        `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/me/change-password/${uId}`,
         {
           currentPassword: oldPassword,
           newPassword: newPassword,
@@ -188,8 +188,8 @@ export default function SettingsPage() {
             <button
               onClick={() => setActiveTab("profile")}
               className={`py-3 px-6 -mb-px text-sm font-medium flex items-center gap-2 ${activeTab === "profile"
-                  ? "border-b-4 border-indigo-600 text-indigo-600"
-                  : "text-gray-200 hover:text-gray-200"
+                ? "border-b-4 border-indigo-600 text-indigo-600"
+                : "text-gray-200 hover:text-gray-200"
                 }`}
             >
               <FaUser /> Profile
@@ -198,8 +198,8 @@ export default function SettingsPage() {
             <button
               onClick={() => setActiveTab("security")}
               className={`py-3 px-6 -mb-px text-sm font-medium flex items-center gap-2 ${activeTab === "security"
-                  ? "border-b-4 border-indigo-600 text-indigo-600"
-                  : "text-gray-200 hover:text-gray-200"
+                ? "border-b-4 border-indigo-600 text-indigo-600"
+                : "text-gray-200 hover:text-gray-200"
                 }`}
             >
               <FaLock /> Security

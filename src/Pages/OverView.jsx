@@ -197,7 +197,7 @@ const DomainMonitoringForm = ({ emailsFornoti }) => {
 
     try {
       const response = await axios.post(
-        "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/watch/domain",
+        "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/watch/domain",
         payload,
         {
           headers: { "Content-Type": "application/json" },
@@ -308,8 +308,8 @@ const DomainMonitoringForm = ({ emailsFornoti }) => {
         type="submit"
         disabled={loading}
         className={`w-full py-3 mt-8 text-lg font-semibold rounded-lg text-white shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 ${loading
-            ? "bg-gray-700 cursor-not-allowed"
-            : "bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500"
+          ? "bg-gray-700 cursor-not-allowed"
+          : "bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500"
           }`}
       >
         {loading && (
@@ -403,7 +403,7 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
         };
 
         const res = await axios.post(
-          "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/watch",
+          "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/watch",
           body,
           { headers: { "Content-Type": "application/json" } }
         );
@@ -461,7 +461,7 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
         formData.append("checkNow", checkNow);
 
         const res = await axios.post(
-          "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/watch/email/upload",
+          "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/watch/email/upload",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -517,7 +517,7 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
   const handleTemplateDownload = async () => {
     try {
       const res = await axios.get(
-        "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring/watch/email/template",
+        "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring/watch/email/template",
         {
           responseType: "blob", // IMPORTANT
         }
@@ -570,8 +570,8 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
           type="button"
           onClick={() => setUploadMode("manual")}
           className={`px-4 py-2 rounded-lg border ${uploadMode === "manual"
-              ? "bg-pink-600 text-white border-pink-600"
-              : "border-gray-600 text-gray-300 hover:bg-gray-700"
+            ? "bg-pink-600 text-white border-pink-600"
+            : "border-gray-600 text-gray-300 hover:bg-gray-700"
             }`}
         >
           Manual Entry
@@ -580,8 +580,8 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
           type="button"
           onClick={() => setUploadMode("upload")}
           className={`px-4 py-2 rounded-lg border ${uploadMode === "upload"
-              ? "bg-pink-600 text-white border-pink-600"
-              : "border-gray-600 text-gray-300 hover:bg-gray-700"
+            ? "bg-pink-600 text-white border-pink-600"
+            : "border-gray-600 text-gray-300 hover:bg-gray-700"
             }`}
         >
           Upload by Excel/CSV
@@ -642,8 +642,8 @@ const EmailMonitoringForm = ({ emailsFornoti }) => {
         type="submit"
         disabled={loading}
         className={`w-full py-3 mt-8 text-lg font-semibold rounded-lg text-white shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 ${loading
-            ? "bg-gray-700 cursor-not-allowed"
-            : "bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500"
+          ? "bg-gray-700 cursor-not-allowed"
+          : "bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500"
           }`}
       >
         {loading && (
@@ -682,7 +682,7 @@ const Overview = () => {
   const [emailsFornoti, setEmailsForNoti] = useState([]);
 
   const fetchUserProfile = async () => {
-    const API = `http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/${webUserId}`;
+    const API = `https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/${webUserId}`;
 
     const authToken = localStorage.getItem("webMonitoringToken");
 

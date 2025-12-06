@@ -29,12 +29,12 @@ const AuthPage = () => {
   const navigate = useNavigate();
 
   const SIGNUP_URL =
-    "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/signup";
+    "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/signup";
 
   const LOGIN_URL =
-    "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users/login";
+    "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users/login";
 
-  const VERIFY_OTP_URL = `http://13.50.233.20:7001/auth/api/v1/otp/verify?email=${encodeURIComponent(
+  const VERIFY_OTP_URL = `https://api.darknettracker.com/auth/api/v1/otp/verify?email=${encodeURIComponent(
     email
   )}&otp=${otp}`;
   // ----------------------------------------

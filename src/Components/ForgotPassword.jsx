@@ -18,7 +18,7 @@ const ResetFlow = () => {
   const navigate = useNavigate();
 
   const BASE_URL =
-    "http://13.50.233.20:7001/auth/api/v1/dark-web-monitoring-users";
+    "https://api.darknettracker.com/auth/api/v1/dark-web-monitoring-users";
 
   // -----------------------------------------
   // STEP 1 - SEND OTP
